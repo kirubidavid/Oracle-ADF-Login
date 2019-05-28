@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="sign-in-taskflow">
+    <default-activity>sign-in</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="sign-in">
+      <page>/pages/sign-in.jsff</page>
+    </view>
+    <view id="dashboard">
+      <page>/pages/dashboard.jsff</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>sign-in</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>SignIn</from-outcome>
+        <to-activity-id>dashboard</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>dashboard</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>SignOut</from-outcome>
+        <to-activity-id>sign-in</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
