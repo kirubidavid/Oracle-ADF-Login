@@ -1,2 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:inputText label="Email:" id="it1" showRequired="true" required="true"/>
+  <af:inputText label="Password:" id="it2" showRequired="true" secret="true" required="true"/>
+  <af:button text="Sign In" id="b1" action="#{SignInController.SignIn}"/>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:SignInController-->
+</ui:composition>
